@@ -7,6 +7,14 @@
 #
 # My bash config 2021-08-06 12:00
 
+############################
+#####                  #####
+#####   ATTENTION!!!   #####
+#####                  #####
+############################
+# look for:
+# HeFi 2021-08-06 12:00 in the meantime disabled 
+
 # HeFi 2021-08-05 18:30
 alias config='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi'
 
@@ -359,7 +367,8 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 #-----------------------------------------------------------------------------#
 
 ### SETTING THE STARSHIP PROMPT ###   DistroTube
-eval "$(starship init bash)"
+# HeFi 2021-08-06 12:00 in the meantime disabled 
+#eval "$(starship init bash)"
 
 #--------------------------   ArcoLinux defaults   ---------------------------#
 
