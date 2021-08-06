@@ -5,7 +5,7 @@
 # | |  | |  __/ |    | |
 # |_|  |_|\___|_|    |_|
 #                      
-# My fish config 2021-08-06 12:00
+# My fish config 2021-08-06 17:00
 
 ############################
 #####                  #####
@@ -26,9 +26,8 @@ end
 ### ADDING TO THE PATH
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
-# HeFi 2021-08-06 12:00 in the meantime disabled 
-#set -e fish_user_paths
-#set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
+set -e fish_user_paths
+set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
 
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
@@ -361,7 +360,6 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 #-----------------------------------------------------------------------------#
 
 ### SETTING THE STARSHIP PROMPT ###   DistroTube
-# HeFi 2021-08-06 12:00 in the meantime disabled 
-#starship init fish | source
+starship init fish | source
 
 neofetch
