@@ -115,14 +115,14 @@ local modkey1      = "Control"
 
 -- personal variables
 --change these variables if you want
-local browser1          = "vivaldi-stable"
+local browser1          = "google-chrome-stable"
 local browser2          = "firefox"
-local browser3          = "chromium -no-default-browser-check"
+local browser3          = "brave"
 local editor            = os.getenv("EDITOR") or "nano"
-local editorgui         = "atom"
+local editorgui         = "geany"
 local filemanager       = "thunar"
 local mailclient        = "evolution"
-local mediaplayer       = "spotify"
+local mediaplayer       = "vlc"
 local terminal          = "alacritty"
 local virtualmachine    = "virtualbox"
 
@@ -354,7 +354,7 @@ globalkeys = my_table.join(
         --{description = "htop", group = "super"}),
     awful.key({ modkey }, "r", function () awful.util.spawn( "rofi-theme-selector" ) end,
         {description = "rofi theme selector", group = "super"}),
-    awful.key({ modkey }, "t", function () awful.util.spawn( terminal ) end,
+    awful.key({ modkey }, "t", function () awful.util.spawn( "gnome-terminal" ) end,
         {description = "terminal", group = "super"}),
     awful.key({ modkey }, "v", function () awful.util.spawn( "pavucontrol" ) end,
         {description = "pulseaudio control", group = "super"}),
@@ -390,8 +390,8 @@ globalkeys = my_table.join(
         {description = "catfish", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "f", function() awful.util.spawn( browser2 ) end,
         {description = browser2, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "g", function() awful.util.spawn( browser3 ) end,
-        {description = browser3, group = "alt+ctrl"}),
+    awful.key({ modkey1, altkey   }, "g", function() awful.util.spawn( browser1 ) end,
+        {description = browser1, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "i", function() awful.util.spawn("nitrogen") end,
         {description = nitrogen, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( "arcolinux-logout" ) end,
@@ -406,8 +406,9 @@ globalkeys = my_table.join(
         {description = terminal, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "u", function() awful.util.spawn( "pavucontrol" ) end,
         {description = "pulseaudio control", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "v", function() awful.util.spawn( browser1 ) end,
-        {description = browser1, group = "alt+ctrl"}),
+    -- HeFi 2021-08-06 14:00 disabled
+    -- awful.key({ modkey1, altkey   }, "v", function() awful.util.spawn( browser1 ) end,
+        -- {description = browser1, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "Return", function() awful.util.spawn(terminal) end,
         {description = terminal, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "m", function() awful.util.spawn( "xfce4-settings-manager" ) end,
