@@ -39,7 +39,8 @@ export HISTCONTROL=ignoreboth:erasedups
 # Make nano the default editor
 
 export EDITOR='nano'
-export VISUAL='nano'
+# HeFi 2021-08-06 12:00
+export VISUAL='geany'
 
 PS1='[\u@\h \W]\$ '
 
