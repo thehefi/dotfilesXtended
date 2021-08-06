@@ -50,14 +50,14 @@ bind "set completion-ignore-case on"
 #                                   Aliases                                   #
 #-----------------------------------------------------------------------------#
 
-#--------------------------   ArcoLinux defaults   ---------------------------#
-
 #list
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -la'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
+#HeFi 2021-08-06 12:00
+alias lt='ls -laht'
 
 #fix obvious typo's
 alias cd..='cd ..'
