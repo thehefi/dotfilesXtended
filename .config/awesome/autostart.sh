@@ -1,3 +1,12 @@
+#  _    _      ______ _
+# | |  | |    |  ____(_)
+# | |__| | ___| |__   _
+# |  __  |/ _ \  __| | |
+# | |  | |  __/ |    | |
+# |_|  |_|\___|_|    |_|
+#
+# My awesome autostart 2021-08-06 18:00
+
 #!/bin/bash
 
 function run {
@@ -36,4 +45,7 @@ feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #run ckb-next -b
 #run discord
 #run telegram-desktop
-#!/bin/sh
+
+# HeFi 2021-08-06 18:00
+run keepassxc
+run nextcloud
