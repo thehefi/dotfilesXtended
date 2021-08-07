@@ -5,7 +5,7 @@
 # | |  | |  __/ |    | |
 # |_|  |_|\___|_|    |_|
 #                      
-# My fish config 2021-08-06 17:00
+# My fish config 2021-08-07 12:30
 
 ############################
 #####                  #####
@@ -27,7 +27,7 @@ end
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
-set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
+set -U fish_user_paths $HOME/.local/bin $HOME/Applications $HOME/PiCloud/scripts $fish_user_paths
 
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
@@ -67,6 +67,8 @@ set fish_color_param brcyan
 #-----------------------------------------------------------------------------#
 #                                   Aliases                                   #
 #-----------------------------------------------------------------------------#
+
+#$BEG_ALIASES
 
 # Manipulation of bare git for dorfiles
 alias config='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi'
@@ -354,6 +356,8 @@ alias jctl="journalctl -p 3 -xb"
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+
+#$END_ALIASES
 
 #-----------------------------------------------------------------------------#
 #                                    misc                                     #
