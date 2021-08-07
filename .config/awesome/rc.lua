@@ -1,3 +1,12 @@
+--  _    _      ______ _
+-- | |  | |    |  ____(_)
+-- | |__| | ___| |__   _
+-- |  __  |/ _ \  __| | |
+-- | |  | |  __/ |    | |
+-- |_|  |_|\___|_|    |_|
+--
+-- My Awesome Window Manager config 2021-08-07 17:00
+
 --[[
 
      Awesome WM configuration template
@@ -300,6 +309,8 @@ root.buttons(my_table.join(
 
 
 
+--$BEG_KEYBINDINGS
+
 -- {{{ Key bindings
 globalkeys = my_table.join(
 
@@ -354,7 +365,7 @@ globalkeys = my_table.join(
         --{description = "htop", group = "super"}),
     awful.key({ modkey }, "r", function () awful.util.spawn( "rofi-theme-selector" ) end,
         {description = "rofi theme selector", group = "super"}),
-    awful.key({ modkey }, "t", function () awful.util.spawn( "gnome-terminal" ) end,
+    awful.key({ modkey }, "t", function () awful.util.spawn( "urxvt" ) end,
         {description = "terminal", group = "super"}),
     awful.key({ modkey }, "v", function () awful.util.spawn( "pavucontrol" ) end,
         {description = "pulseaudio control", group = "super"}),
@@ -816,6 +827,8 @@ clientkeys = my_table.join(
         end ,
         {description = "maximize", group = "client"})
 )
+
+--$END_KEYBINDINGS
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
