@@ -52,12 +52,22 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/Applications" ] ;
+  then PATH="$HOME/Applications:$PATH"
+fi
+
+if [ -d "$HOME/Pi4Cloud/scripts" ] ;
+  then PATH="$HOME/PiCloud/scripts:$PATH"
+fi
+
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
 #-----------------------------------------------------------------------------#
 #                                   Aliases                                   #
 #-----------------------------------------------------------------------------#
+
+#$BEG_ALIASES
 
 #list
 alias ls='ls --color=auto'
@@ -362,6 +372,8 @@ alias jctl="journalctl -p 3 -xb"
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+
+#$END_ALIASES
 
 #-----------------------------------------------------------------------------#
 #                                    misc                                     #
