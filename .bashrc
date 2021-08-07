@@ -409,4 +409,9 @@ neofetch
 #sfetch | lolcat
 
 # HeFi 2021-08-08 01:00
-exec fish
+#exec fish
+
+if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
+then
+	exec fish
+fi
