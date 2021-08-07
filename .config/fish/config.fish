@@ -1,11 +1,10 @@
-#  _    _      ______ _ 
-# | |  | |    |  ____(_)
-# | |__| | ___| |__   _ 
-# |  __  |/ _ \  __| | |
-# | |  | |  __/ |    | |
-# |_|  |_|\___|_|    |_|
+#  _   _      _____ _ 
+# | | | | ___|  ___(_)
+# | |_| |/ _ \ |_  | |
+# |  _  |  __/  _| | |
+# |_| |_|\___|_|   |_|
 #                      
-# My fish config 2021-08-07 12:30
+# My fish config 2021-08-08 01:00
 
 ############################
 #####                  #####
@@ -365,5 +364,3 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 ### SETTING THE STARSHIP PROMPT ###   DistroTube
 starship init fish | source
-
-neofetch
