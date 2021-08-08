@@ -4,7 +4,7 @@
 # |  _  |  __/  _| | |
 # |_| |_|\___|_|   |_|
 #
-# My bash config 2021-08-08 01:00
+# My bash config 2021-08-08 05:30
 
 ############################
 #####                  #####
@@ -295,24 +295,12 @@ alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR 
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
-# get fastest mirrors
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-
-# Colorize grep output (good for log files)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
 # adding flags
-alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
 ## get top process eating memory
@@ -336,13 +324,8 @@ alias push='git push origin'
 alias tag='git tag'
 alias newtag='git tag -a'
 
-# get error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
-
 # switch between shells
 # I do not recommend switching default SHELL from bash.
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 #$END_ALIASES
