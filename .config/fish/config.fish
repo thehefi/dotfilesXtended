@@ -71,6 +71,8 @@ set fish_color_param brcyan
 
 # Manipulation of bare git for dorfiles
 alias config='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi'
+# HeFi 2021-08-09 18:00
+alias condiff='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi diff HEAD'
 
 # Test settings of Awesome Window Manager
 alias astest='Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome'
