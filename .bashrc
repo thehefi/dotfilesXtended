@@ -14,10 +14,6 @@
 # look for:
 # HeFi 2021-08-06 12:00 in the meantime disabled 
 
-# HeFi 2021-08-05 18:30
-alias config='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi'
-alias condiff='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi diff HEAD'
-
 #--------------------------   ArcoLinux defaults   ---------------------------#
 
 #
@@ -68,6 +64,11 @@ bind "set completion-ignore-case on"
 #-----------------------------------------------------------------------------#
 
 #$BEG_ALIASES
+
+# HeFi 2021-08-05 18:30
+alias config='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi'
+# HeFi 2021-08-09 18:00
+alias condiff='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi diff HEAD'
 
 #list
 alias ls='ls --color=auto'
