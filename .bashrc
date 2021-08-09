@@ -4,7 +4,7 @@
 # |  _  |  __/  _| | |
 # |_| |_|\___|_|   |_|
 #
-# My bash config 2021-08-08 05:30
+# My bash config 2021-08-09 18:00
 
 ############################
 #####                  #####
@@ -16,6 +16,7 @@
 
 # HeFi 2021-08-05 18:30
 alias config='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi'
+alias condiff='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi diff HEAD'
 
 #--------------------------   ArcoLinux defaults   ---------------------------#
 
@@ -235,7 +236,7 @@ alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 #receive the key of a developer
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-alias fix-key="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
+alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
