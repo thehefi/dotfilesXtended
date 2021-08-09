@@ -4,7 +4,7 @@
 # |  _  |  __/  _| | |
 # |_| |_|\___|_|   |_|
 #                      
-# My fish config 2021-08-08 01:00
+# My fish config 2021-08-09 23:00
 
 ############################
 #####                  #####
@@ -81,7 +81,7 @@ alias astest='Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome'
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -la'
-alias l='ls'
+alias l='ls -AF'
 alias l.="ls -A | egrep '^\.'"
 #HeFi 2021-08-06 12:00
 alias lt='ls -laht'
