@@ -1,11 +1,10 @@
-#  _    _      ______ _
-# | |  | |    |  ____(_)
-# | |__| | ___| |__   _
-# |  __  |/ _ \  __| | |
-# | |  | |  __/ |    | |
-# |_|  |_|\___|_|    |_|
+#  _   _      _____ _ 
+# | | | | ___|  ___(_)
+# | |_| |/ _ \ |_  | |
+# |  _  |  __/  _| | |
+# |_| |_|\___|_|   |_|
 #
-# My awesome autostart 2021-08-07 17:00
+# My awesome autostart 2021-08-09 21:45
 
 #!/bin/bash
 
@@ -32,7 +31,7 @@ run volumeicon
 #run nitrogen --restore
 run conky -c $HOME/.config/awesome/system-overview
 #you can set wallpapers in themes as well
-feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+#feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #run applications from startup
 #run firefox
 #run atom
@@ -46,3 +45,5 @@ feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 # HeFi 2021-08-06 18:00
 run keepassxc
 run nextcloud
+# HeFi 2021-08-09 21:45
+run joplin
