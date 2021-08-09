@@ -4,7 +4,7 @@
 -- |  _  |  __/  _| | |
 -- |_| |_|\___|_|   |_|
 --
--- My Awesome Window Manager config 2021-08-08 03:00
+-- My Awesome Window Manager config 2021-08-10 01:00
 
 --[[
 
@@ -46,7 +46,8 @@ local freedesktop   = require("freedesktop")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 local hotkeys_popup = require("awful.hotkeys_popup").widget
-                      require("awful.hotkeys_popup.keys")
+-- HeFi 2021-08-10 01:00
+--                       require("awful.hotkeys_popup.keys")
 local my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi           = require("beautiful.xresources").apply_dpi
 -- }}}
@@ -384,6 +385,8 @@ globalkeys = my_table.join(
 
 
     -- ctrl+alt +  ...
+    awful.key({ modkey1, altkey   }, "j", function() awful.util.spawn( "joplin" ) end,
+        {description = "Joplin", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "w", function() awful.util.spawn( "arcolinux-welcome-app" ) end,
         {description = "ArcoLinux Welcome App", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "e", function() awful.util.spawn( "arcolinux-tweak-tool" ) end,
@@ -827,8 +830,6 @@ clientkeys = my_table.join(
         {description = "maximize", group = "client"})
 )
 
---$END_KEYBINDINGS
-
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
@@ -902,9 +903,12 @@ clientbuttons = gears.table.join(
     end)
 )
 
+--$END_KEYBINDINGS
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
+
 
 
 
@@ -982,6 +986,9 @@ awful.rules.rules = {
 
     -- Set applications to be maximized at startup.
     -- find class or role via xprop command
+
+    { rule = { class = "Joplin" },
+          properties = { maximized = true } },
 
     { rule = { class = editorgui },
           properties = { maximized = true } },
