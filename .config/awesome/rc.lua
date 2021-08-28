@@ -4,7 +4,7 @@
 -- |  _  |  __/  _| | |
 -- |_| |_|\___|_|   |_|
 --
--- My Awesome Window Manager config 2021-08-10 01:00
+-- My Awesome Window Manager config 2021-08-20 13:00
 
 --[[
 
@@ -19,7 +19,7 @@
 
 --]]
 
--- {{{ Required libraries
+-- {{{ Required libraries     ====================================================================
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
@@ -54,7 +54,7 @@ local dpi           = require("beautiful.xresources").apply_dpi
 
 
 
--- {{{ Error handling
+-- {{{ Error handling     ========================================================================
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -80,7 +80,7 @@ end
 
 
 
--- {{{ Autostart windowless processes
+-- {{{ Autostart windowless processes     ========================================================
 local function run_once(cmd_arr)
     for _, cmd in ipairs(cmd_arr) do
         awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
@@ -102,7 +102,7 @@ awful.spawn.with_shell(
 
 -- }}}
 
--- {{{ Variable definitions
+-- {{{ Variable definitions     ==================================================================
 
 local themes = {
     "multicolor",		-- 1
@@ -236,7 +236,7 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 
 
 
--- {{{ Menu
+-- {{{ Menu     ==================================================================================
 local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
     { "arandr", "arandr" },
@@ -265,7 +265,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
 
 
 
--- {{{ Screen
+-- {{{ Screen     ================================================================================
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", function(s)
     -- Wallpaper
@@ -299,7 +299,7 @@ awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s)
 
 
 
--- {{{ Mouse bindings
+-- {{{ Mouse bindings     ========================================================================
 root.buttons(my_table.join(
     awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
@@ -311,7 +311,7 @@ root.buttons(my_table.join(
 
 --$BEG_KEYBINDINGS
 
--- {{{ Key bindings
+-- {{{ Key bindings     ==========================================================================
 globalkeys = my_table.join(
 
     -- {{{ Personal keybindings
@@ -385,6 +385,8 @@ globalkeys = my_table.join(
 
 
     -- ctrl+alt +  ...
+    awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( "keepassxc" ) end,
+        {description = "KeePassXC", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "j", function() awful.util.spawn( "joplin" ) end,
         {description = "Joplin", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "w", function() awful.util.spawn( "arcolinux-welcome-app" ) end,
@@ -912,7 +914,7 @@ root.keys(globalkeys)
 
 
 
--- {{{ Rules
+-- {{{ Rules     =================================================================================
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- All clients will match this rule.
@@ -1095,7 +1097,7 @@ awful.rules.rules = {
 }
 -- }}}
 
--- {{{ Signals
+-- {{{ Signals     ===============================================================================
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
