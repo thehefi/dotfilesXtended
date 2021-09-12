@@ -44,7 +44,9 @@ theme.menu_bg_focus                             = "#050505dd"
 theme.widget_temp                               = theme.confdir .. "/icons/temp.png"
 theme.widget_uptime                             = theme.confdir .. "/icons/ac.png"
 theme.widget_cpu                                = theme.confdir .. "/icons/cpu.png"
+--[[ HeFi 2021-09-12 15:45 disabled
 theme.widget_weather                            = theme.confdir .. "/icons/dish.png"
+--]]
 theme.widget_fs                                 = theme.confdir .. "/icons/fs.png"
 theme.widget_mem                                = theme.confdir .. "/icons/mem.png"
 theme.widget_netdown                            = theme.confdir .. "/icons/net_down.png"
@@ -115,9 +117,11 @@ theme.cal = lain.widget.cal({
 })
 
 -- Weather
+--[[ HeFi 2021-09-12 15:45 disabled
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
-    city_id = 2803138, -- placeholder (Belgium)
+    city_id = 2761333, -- placeholder (Belgium)
+    APPID = "FAYZFCQQW3BB932T",
     notification_preset = { font = "Noto Sans Mono Medium 10", fg = theme.fg_normal },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
     settings = function()
@@ -126,6 +130,7 @@ theme.weather = lain.widget.weather({
         widget:set_markup(markup.fontfg(theme.font, "#eca4c4", descr .. " @ " .. units .. "°C "))
     end
 })
+--]]
 
 -- / fs
 --[[ commented because it needs Gio/Glib >= 2.54
@@ -209,11 +214,13 @@ local netdowninfo = wibox.widget.textbox()
 local netupicon = wibox.widget.imagebox(theme.widget_netup)
 local netupinfo = lain.widget.net({
     settings = function()
+        --[[ HeFi 2021-09-12 15:45 disabled
         if iface ~= "network off" and
            string.match(theme.weather.widget.text, "N/A")
         then
             theme.weather.update()
         end
+        --]]
 
         widget:set_markup(markup.fontfg(theme.font, "#e54c62", net_now.sent .. " "))
         netdowninfo:set_markup(markup.fontfg(theme.font, "#87af5f", net_now.received .. " "))
@@ -325,8 +332,10 @@ function theme.at_screen_connect(s)
             memory.widget,
             cpuicon,
             cpu.widget,
-            --weathericon,
-            --theme.weather.widget,
+            --[[ HeFi 2021-09-12 15:45 disabled
+            weathericon,
+            theme.weather.widget,
+            --]]
             --tempicon,
             --temp.widget,
             --baticon,
