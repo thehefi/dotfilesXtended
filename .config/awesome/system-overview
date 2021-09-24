@@ -106,8 +106,155 @@ conky.config = {
 	--Lua
 
 
+-- HeFi 2021-09-24 12:00
+
+template0 = '210',
+template1 = '25',
+template2 = '15',
+template3 = 'wlp3s0',
+template4 = 'enp4s0',
+template5 = 'enp0s20u3'
+
 };
 conky.text = [[
+####==========================================================================
+#### HeFi 2021-09-24 12:00 BEG
+####==========================================================================
+####==========================================================================
+##                                                            Desktop/Datetime
+#
+D:$desktop$alignr${time %a %d.%m %H:%M:%S}
+####==========================================================================
+##                                                                         CPU
+#
+####--------------------------------------------------------------------------
+##                                                                   CPU graph
+#
+${cpugraph $template1,$template0 00ffff 00ff00 -t}
+####--------------------------------------------------------------------------
+##                                                                        Temp
+#
+$color${freq_g}GHz \
+${color green}\
+${if_match ${hwmon 2 temp 1}>69}${color yellow}${endif}\
+${if_match ${hwmon 2 temp 1}>86}${color orange}${endif}\
+${if_match ${hwmon 2 temp 1}>99}${color red}${endif}\
+${hwmon 2 temp 1}(${hwmon 2 temp 2}/${hwmon 2 temp 3})°C \
+####--------------------------------------------------------------------------
+##                                                              CPU single bar
+#
+$color$cpu% ${cpubar 10}
+####--------------------------------------------------------------------------
+##                                                           CPU multiple bars
+#
+${color orange}\
+${cpu cpu1}%${goto 35}${cpubar cpu1 10}
+${cpu cpu2}%${goto 35}${cpubar cpu2 10}
+${cpu cpu3}%${goto 35}${cpubar cpu3 10}
+${cpu cpu4}%${goto 35}${cpubar cpu4 10}
+####--------------------------------------------------------------------------
+##                                                                 Uptime/Load
+#
+Up:$color5$uptime_short$color0\
+ Proc:$color5$processes/$running_processes($running_threads)
+$color5${loadgraph $template1,$template0 00ffff 00ff00 -t}$color0
+Load 1/5/15:$alignr$color5$loadavg
+####==========================================================================
+##                                                                      Memory
+#
+${color orange}\
+RAM:$color$mem$color0/$color$memmax $memperc%\
+ ${color #ffc11f}${membar 10}$color0
+Swap:$swap/$swapmax $swapperc% ${swapbar 10}
+####==========================================================================
+##                                                                     Battery
+#
+${if_match "$battery_short"<"D"}${color yellow}^\
+${else}\
+${if_match "$battery_short"<"E"}${color orange}v\
+${else}\
+${if_match "$battery_short"<"F"}${color red}0\
+${else}\
+${if_match "$battery_short"<"N"}${color green}=\
+${else}\
+${if_match "$battery_short"<"U"}${color red}!\
+${else}${color}?\
+${endif}\
+${endif}\
+${endif}\
+${endif}\
+${endif}\
+ $battery_short\
+${color green}\
+${if_match $battery_percent<70}${color yellow}${endif}\
+${if_match $battery_percent<31}${color orange}${endif}\
+${if_match $battery_percent<21}${color red}${endif}\
+ $battery_time ${battery_bar 10}
+$color$hr
+####==========================================================================
+##                                                                    Networks
+#
+####--------------------------------------------------------------------------
+##                                                   Template 3: wlp3s0 (WLAN)
+#
+${if_existing /proc/net/route $template3}\
+${color5}$template3$alignr${color7}${color #00cc88}${addrs $template3}
+${color green}${downspeedgraph $template3 $template2,$template0 00ffff 00ff00}
+${color red}${upspeedgraph $template3 $template2,$template0 00ffff 00ff00}
+${color green}${totaldown $template3} ${downspeedf $template3}\
+$alignr${color}${totalup $template3} ${upspeedf $template3}
+${color8}${wireless_link_bar 10 $template3}
+${wireless_essid $template3}\
+ ${color7}${wireless_ap $template3}
+${color0}ch:${color9}${wireless_channel $template3}\
+ ${color0}fr:${color9}${wireless_freq $template3}\
+ ${color0}m:${color9}${wireless_mode $template3}
+${color0}qual/max/%: ${color9}${wireless_link_qual $template3} ${color0}/\
+ ${color9}${wireless_link_qual_max $template3} ${color0}/\
+ ${color9}${wireless_link_qual_perc $template3}
+${color orange}$stippled_hr
+$endif\
+####--------------------------------------------------------------------------
+##                                          Template 4: enp4s0 (LAN: Ethernet)
+#
+${if_existing /proc/net/route $template4}\
+${color5}$template4$alignr${color7}${color #00cc88}${addrs $template4}
+${color green}${downspeedgraph $template4 $template1,$template0 00ffff 00ff00}
+${color red}${upspeedgraph $template4 $template1,$template0 00ffff 00ff00}
+${color green}${totaldown $template4} ${downspeedf $template4}\
+$alignr${color}${totalup $template4} ${upspeedf $template4}
+${color orange}$stippled_hr
+$endif\
+####--------------------------------------------------------------------------
+##                  Template 5: enp0s20u3 (LAN: Ethernet over USB - Tethering)
+#
+${if_existing /proc/net/route $template5}\
+${color5}$template5$alignr${color7}${color #00cc88}${addrs $template5}
+${color green}${downspeedgraph $template5 $template2,$template0 00ffff 00ff00}
+${color red}${upspeedgraph $template5 $template2,$template0 00ffff 00ff00}
+${color green}${totaldown $template5} ${downspeedf $template5}\
+$alignr${color}${totalup $template5} ${upspeedf $template5}
+${color orange}$stippled_hr
+$endif\
+####==========================================================================
+##                                                                     Gateway
+#
+# ${if_gw}$color${tcp_ping 195.96.0.1}${color0}ms$color$endif
+${color}gw:${color7}$gw_ip $color5$gw_iface
+####==========================================================================
+##                                                                    Location
+#
+${color7}$stippled_hr
+$alignr${color8}Lon:${color7}+16:20:44.3 ${color9}16.345650
+$alignr${color8}Lat:${color7}+48:12:05.4 ${color9}48.201500
+$alignr${color8}Alt:${color7}(254.845m)  ${color9}210.0m   
+$alignr${color}S-6.3°=173.7°
+
+####==========================================================================
+#### HeFi 2021-09-24 12:00 END
+####==========================================================================
+
+
 ${color1}${alignc}S Y S T E M    I N F O${color}
 ${color1}${hr}${color}
 ${color1}Host:${alignr}${color2}${nodename}${color}
