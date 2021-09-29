@@ -4,7 +4,7 @@
 # |  _  |  __/  _| | |
 # |_| |_|\___|_|   |_|
 #                      
-# My fish config 2021-08-09 23:00
+# My ArcoLinux Xtended fish config 2021-09-29 15:30
 
 ############################
 #####                  #####
@@ -69,7 +69,10 @@ set fish_color_param brcyan
 
 #$BEG_ALIASES
 
-# Manipulation of bare git for dorfiles
+# HeFi 2021-09-20 12:30
+alias lsblk='lsblk -o NAME,SIZE,LABEL,FSSIZE,FSUSED,FSAVAIL,FSUSE%,MOUNTPOINTS'
+
+# Manipulation of bare git for dotfiles
 alias config='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi'
 # HeFi 2021-08-09 18:00
 alias condiff='/usr/bin/git --git-dir=/home/hefi/dotfiles/ --work-tree=/home/hefi diff HEAD'
@@ -83,7 +86,7 @@ alias la='ls -a'
 alias ll='ls -la'
 alias l='ls -AF'
 alias l.="ls -A | egrep '^\.'"
-#HeFi 2021-08-06 12:00
+# HeFi 2021-08-06 12:00
 alias lt='ls -laht'
 
 #fix obvious typo's
