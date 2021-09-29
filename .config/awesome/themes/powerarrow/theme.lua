@@ -238,6 +238,7 @@ https://openweathermap.org/
 Type in the name of your city
 Copy/paste the city code in the URL to this file in city_id
 --]]
+--[[ HeFi 2021-09-12 Weather disabled
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
     city_id = 2803138, -- placeholder (Belgium)
@@ -249,6 +250,7 @@ theme.weather = lain.widget.weather({
         widget:set_markup(markup.fontfg(theme.font, "#ffffff", descr .. " @ " .. units .. "°C "))
     end
 })
+--]]
 
 -- / fs
 local fsicon = wibox.widget.imagebox(theme.widget_hdd)
