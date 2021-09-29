@@ -4,7 +4,7 @@
 -- |  _  |  __/  _| | |
 -- |_| |_|\___|_|   |_|
 --
--- My Awesome Window Manager config 2021-08-20 13:00
+-- My ArcoLinux Xtended Awesome Window Manager config 2021-09-29 15:30
 
 --[[
 
@@ -335,8 +335,9 @@ globalkeys = my_table.join(
         {description = browser1, group = "function keys"}),
     awful.key({ modkey }, "F2", function () awful.util.spawn( editorgui ) end,
         {description = editorgui , group = "function keys" }),
-    awful.key({ modkey }, "F3", function () awful.util.spawn( "inkscape" ) end,
-        {description = "inkscape" ,group = "function keys" }),
+    -- HeFi 2021-09-15 16:00
+    awful.key({ modkey }, "F3", function () awful.util.spawn( "code" ) end,
+        {description = "code" ,group = "function keys" }),
     awful.key({ modkey }, "F4", function () awful.util.spawn( "gimp" ) end,
         {description = "gimp" , group = "function keys" }),
     awful.key({ modkey }, "F5", function () awful.util.spawn( "meld" ) end,
