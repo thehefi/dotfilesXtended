@@ -4,7 +4,7 @@
 # |  _  |  __/  _| | |
 # |_| |_|\___|_|   |_|
 #
-# My ArcoLinux Xtended bash config 2021-09-29 15:30
+# My ArcoLinux Xtended bashrc 2021-09-29 15:30
 
 ############################
 #####                  #####

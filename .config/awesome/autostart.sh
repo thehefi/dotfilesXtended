@@ -4,7 +4,7 @@
 # |  _  |  __/  _| | |
 # |_| |_|\___|_|   |_|
 #
-# My awesome autostart 2021-08-09 21:45
+# My ArcoLinux Xtended awesome autostarts 2021-09-29 15:30
 
 #!/bin/bash
 

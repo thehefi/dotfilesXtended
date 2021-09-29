@@ -4,7 +4,7 @@
 -- |  _  |  __/  _| | |
 -- |_| |_|\___|_|   |_|
 --
--- My ArcoLinux Xtended Awesome Window Manager config 2021-09-29 15:30
+-- My ArcoLinux Xtended awesome config 2021-09-29 15:30
 
 --[[
 
